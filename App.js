@@ -7,6 +7,7 @@ import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 import HomeScreen from './screens/home_screen/HomeScreen'
 import ExamListScreen from './screens/exam_list_screen/ExamListScreen';
 import CustomDrawer from './components/drawer/CustomDrawer';
+import SubjectListScreen from './screens/subject_list_screen/SubjectListScreen';
 
 export default class App extends React.Component {
   render() {
@@ -21,7 +22,7 @@ const AppDrawerNavigator = createDrawerNavigator(
     Home: {
       screen: HomeScreen
     },
-    ExamList: {screen: ExamListScreen}
+    SubjectList: {screen: SubjectListScreen}
   },
   {
     contentComponent: CustomDrawer
@@ -30,7 +31,8 @@ const AppDrawerNavigator = createDrawerNavigator(
 
 const AppStackNavigator = createStackNavigator(
   {
-    Drawer: {screen: AppDrawerNavigator}
+    Drawer: {screen: AppDrawerNavigator},
+    ExamList: {screen: ExamListScreen}
   },
   {
     headerMode: "none"
