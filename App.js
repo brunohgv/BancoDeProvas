@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Root } from 'native-base';
+import { Root, Icon } from 'native-base';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 
 import HomeScreen from './screens/home_screen/HomeScreen'
@@ -22,9 +22,17 @@ export default class App extends React.Component {
 const AppDrawerNavigator = createDrawerNavigator(
   {
     Home: {
-      screen: HomeScreen
+      screen: HomeScreen,
+      navigationOptions: {
+        drawerLabel: 'Início'
+      }
     },
-    SubjectList: {screen: SubjectListScreen}
+    SubjectList: {
+      screen: SubjectListScreen,
+      navigationOptions: {
+        drawerLabel: 'Lista de Disciplinas'
+      }
+    }
   },
   {
     contentComponent: CustomDrawer
