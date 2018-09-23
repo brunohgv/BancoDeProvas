@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import AppHeader from '../../components/headers/AppHeader';
 import { Container, Content, List, ListItem, Text, Header, Left, Button, Icon, Body, Title, Right } from 'native-base';
-import BackHeader from '../../components/headers/BackHeader';
 
 export default class ExamListScreen extends Component {
   render() {
@@ -34,7 +32,7 @@ export default class ExamListScreen extends Component {
           <List
             dataArray={items}
             renderRow={(item) => 
-              <ListItem>
+              <ListItem onPress={() => this.props.navigation.navigate('ExamDetail')}>
                 <Text>{item}</Text>
               </ListItem>
             }>
